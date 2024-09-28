@@ -4,6 +4,7 @@ from pycaret.clustering import load_model, predict_model
 import plotly.express as px
 import json
 
+st.set_page_config(layout= 'wide')
 
 MODEL_NAME = 'welcome_survey_clustering_pipeline_v2'
 
