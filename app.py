@@ -63,25 +63,25 @@ cluster_names_and_descriptions = get_cluster_names_and_descriptions()
 predicted_cluster_id = predict_model(model, data= person_df)['Cluster'].values[0]
 predicted_cluster_data = cluster_names_and_descriptions[predicted_cluster_id]
 
-st.header(f'Najbliżej Ci do grupy: {predicted_cluster_data["name"]}')
+st.markdown(f'## Najbliżej Ci do grupy: <span style="color: red;">{predicted_cluster_data["name"]}</span>', unsafe_allow_html=True)
 
 #wygenerowane tematyczne obrazki od openart ai
-if predicted_cluster_id == 'Cluster 0':
-    st.image('https://cdn.openart.ai/uploads/image_Vk27z142_1727548483511_raw.jpg')
-elif predicted_cluster_id == 'Cluster 1':
-    st.image('https://cdn.openart.ai/uploads/image_ABB9jZ7N_1727549147415_raw.jpg')
-elif predicted_cluster_id == 'Cluster 2':
-    st.image('https://cdn.openart.ai/uploads/image_SqHUbKrC_1727547617784_raw.jpg')
-elif predicted_cluster_id == 'Cluster 3':
-    st.image('https://cdn.openart.ai/uploads/image__4hewy11_1727549274916_raw.jpg')
-elif predicted_cluster_id == 'Cluster 4':
-    st.image('https://cdn.openart.ai/uploads/image_vxalAIOP_1727548110511_raw.jpg')
-elif predicted_cluster_id == 'Cluster 5':
-    st.image('https://cdn.openart.ai/uploads/image_XMDAv_bp_1727548278005_raw.jpg')
-elif predicted_cluster_id == 'Cluster 6':
-    st.image('https://cdn.openart.ai/uploads/image_qQJBBAh4_1727548377342_raw.jpg')
-else:
-    st.image('https://cdn.openart.ai/uploads/image_rltFsKa8_1727548484168_raw.jpg')
+# if predicted_cluster_id == 'Cluster 0':
+#     st.image('https://cdn.openart.ai/uploads/image_Vk27z142_1727548483511_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 1':
+#     st.image('https://cdn.openart.ai/uploads/image_ABB9jZ7N_1727549147415_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 2':
+#     st.image('https://cdn.openart.ai/uploads/image_SqHUbKrC_1727547617784_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 3':
+#     st.image('https://cdn.openart.ai/uploads/image__4hewy11_1727549274916_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 4':
+#     st.image('https://cdn.openart.ai/uploads/image_vxalAIOP_1727548110511_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 5':
+#     st.image('https://cdn.openart.ai/uploads/image_XMDAv_bp_1727548278005_raw.jpg')
+# elif predicted_cluster_id == 'Cluster 6':
+#     st.image('https://cdn.openart.ai/uploads/image_qQJBBAh4_1727548377342_raw.jpg')
+# else:
+#     st.image('https://cdn.openart.ai/uploads/image_rltFsKa8_1727548484168_raw.jpg')
 
 st.markdown(predicted_cluster_data['description'])
 st.write('---')
